@@ -1,3 +1,6 @@
+import logging
+logging.basicConfig(level=logging.INFO)
+
 from flask import Flask, render_template, request
 from datetime import datetime, timezone
 
@@ -7,6 +10,7 @@ from data.database import initialise_database, add_order, clear_orders, count_or
 from scheduled_jobs import initialise_scheduled_jobs
 from products import create_product_download
 import requests
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
